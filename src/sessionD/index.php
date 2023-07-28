@@ -76,10 +76,7 @@
 
     <h2>Exercice 7</h2>
     <?php
-    $pas = range(200,0,-12);
-    foreach ($pas as $k => $value) {
-        echo $value. " : Enfin !!!! <br>";
-    }
+   
     ?>
 </body>
 

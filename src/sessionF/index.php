@@ -40,9 +40,30 @@
 
     <h2>Exercic 5</h2>
     <?php
-        $ow = time();
-        $dateMai = mktime(0, 0, 0, 5, 16, 2016);
-        $diff =  
+        $now = new DateTime("now");
+        $dateMai = date_create('2016-05-16');
+        $diff = date_diff($dateMai, $now);
+        echo $diff ->format('%a jours');
+    ?>
+
+    <h2>Exercic 6</h2>
+    <?php
+        $month = cal_days_in_month(CAL_GREGORIAN, 2, 2016);
+        echo "Il y a ".$month." jours dans le mois de février 2016";
+    ?>
+
+    <h2>Exercic 7</h2>
+    <?php
+       $dateAdd = new DateTime("now");
+       date_add($dateAdd,date_interval_create_from_date_string("20 days"));
+       echo date_format($dateAdd,"d-m-Y");
+    ?>
+
+    <h2>Exercic 8</h2>
+    <?php
+      $dateSub = new DateTime("now");
+      date_sub($dateSub,date_interval_create_from_date_string("22 days"));
+      echo date_format($dateSub,"d-m-Y");
     ?>
 </body>
 </html>
